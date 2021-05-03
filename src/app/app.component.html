@@ -17,20 +17,20 @@
   <hr />
   <div class="row">
     <div class="co-xs-md-12">
-      <app-game-control
-                        (gameStarted)="onGameStarted($event)"></app-game-control>
+      <app-game-control (gameStarted)="onGameStarted($event)"></app-game-control>
     </div>
   </div>
   <hr />
   <div class="row">
     <div class="co-xs-md-12">
-      <app-even></app-even>
+      <app-even *ngFor="let game of games" [evenNumber]="game"></app-even>
     </div>
   </div>
   <hr />
   <div class="row">
     <div class="co-xs-md-12">
-      <app-odd></app-odd>
+      <app-odd *ngFor="let game of games"
+               [oddNumber]="game"></app-odd>
     </div>
   </div>
 </div>

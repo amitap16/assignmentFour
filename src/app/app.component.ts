@@ -6,13 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  games = [{ id: 99 }];
+  games = [];
 
   onGameStarted(id: number) {
     console.log("onGameStarted from app comp...");
     console.log(id);
-    this.games.push({
-      id: id
-    });
+    this.games.push(id);
   }
 }
