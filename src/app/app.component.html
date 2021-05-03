@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="co-xs-md-12">
+    <div class="co-xs-12">
       <h4>Bind it!</h4>
       <ol>
         <li> Create three new components: GameControl, Odd and Even                                                                                </li>
@@ -16,21 +16,20 @@
   </div>
   <hr />
   <div class="row">
-    <div class="co-xs-md-12">
+    <div class="co-xs-12">
       <app-game-control (gameStarted)="onGameStarted($event)"></app-game-control>
     </div>
   </div>
   <hr />
   <div class="row">
-    <div class="co-xs-md-12">
-      <app-even *ngFor="let game of games" [evenNumber]="game"></app-even>
+    <div class="co-xs-12">
+      <app-odd *ngFor="let oddNum of oddNums" [oddNumber]="oddNum"></app-odd>
     </div>
   </div>
   <hr />
   <div class="row">
-    <div class="co-xs-md-12">
-      <app-odd *ngFor="let game of games"
-               [oddNumber]="game"></app-odd>
+    <div class="co-xs-12">
+      <app-even *ngFor="let evenNum of evenNums" [evenNumber]="evenNum"></app-even>
     </div>
   </div>
 </div>

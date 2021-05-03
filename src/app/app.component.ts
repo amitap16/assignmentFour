@@ -6,11 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  games = [];
+  oddNums = [];
+  evenNums = [];
 
-  onGameStarted(id: number) {
+  onGameStarted(num: number) {
     console.log("onGameStarted from app comp...");
-    console.log(id);
-    this.games.push(id);
+    console.log(num);
+    if (num % 2 === 0)
+      this.evenNums.push(num);
+    else
+      this.oddNums.push(num);
   }
 }
