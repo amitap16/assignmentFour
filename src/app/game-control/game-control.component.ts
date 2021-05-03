@@ -15,11 +15,14 @@ export class GameControlComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   onStartGame() {
     this.resetCounter();
     console.log("onStart...");
-    this.intervalRef = setInterval(this.callTimer, 1000);
+    this.intervalRef = setInterval(() => {
+      this.counter++;
+      console.log("callTimer...");
+      this.gameStarted.emit({ id: this.counter });
+    }, 1000);
   }
 
   onStopGame() {
@@ -28,12 +31,6 @@ export class GameControlComponent implements OnInit {
     clearInterval(this.intervalRef);
   }
 
-
-  callTimer(){
-    this.counter++;
-    console.log("callTimer...");
-    this.gameStarted.emit({ id: this.counter });
-  }
 
   resetCounter() {
     this.counter = 1;
