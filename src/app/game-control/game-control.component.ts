@@ -6,10 +6,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./game-control.component.css']
 })
 export class GameControlComponent implements OnInit {
-  counter: number = 1;
+  counter: number = 0;
   intervalRef = null;
 
-  @Output() gameStarted = new EventEmitter<{ id: number }>();
+  @Output() gameStarted = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit(): void {
@@ -21,7 +21,7 @@ export class GameControlComponent implements OnInit {
     this.intervalRef = setInterval(() => {
       this.counter++;
       console.log("callTimer...");
-      this.gameStarted.emit({ id: this.counter });
+      this.gameStarted.emit(this.counter);
     }, 1000);
   }
 
@@ -31,8 +31,7 @@ export class GameControlComponent implements OnInit {
     clearInterval(this.intervalRef);
   }
 
-
   resetCounter() {
-    this.counter = 1;
+    this.counter = 0;
   }
 }

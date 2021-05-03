@@ -8,10 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   games = [{ id: 99 }];
 
-  onGameStarted(gameData: { id: number }) {
+  onGameStarted(id: number) {
     console.log("onGameStarted from app comp...");
+    console.log(id);
     this.games.push({
-      id: gameData.id
+      id: id
     });
   }
 }
